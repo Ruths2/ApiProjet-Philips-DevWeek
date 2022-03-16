@@ -1,0 +1,30 @@
+table {
+  width: 100%;
+}
+
+.mat-sort-header-container {
+  align-items: center;
+}
+
+.titulo-card {
+  margin-bottom: 5%;
+}
+
+.primeiro-card {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.segundo-card {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.terceiro-card {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
