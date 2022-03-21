@@ -14,6 +14,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+
 
 
 @SpringBootTest
@@ -42,12 +44,19 @@ class PhildevweekbackApplicationTests{
 
 	}
 
+	/*
+	 * @Test
+	 * public void addNewRegiaoTest() throws Exception {
+	 *   Regiao newRegiao = new Regiao("Noroeste",65);
+	 *   mockMvc.perform(post(URL+"/add").contentType(MediaType.APPLICATION_JSON).content(asJasonString(newRegiao))).andExpect(status().isOk());
+	 * }
+	 */
+
 	@Test
-	public void addNewRegiaoTest() throws Exception {
-	
-		Regiao newRegiao = new Regiao(1L,"Noroeste",65);
-		mockMvc.perform(post(URL+"/add").contentType(MediaType.APPLICATION_JSON).content(asJasonString(newRegiao))).andExpect(status().isOk());
+	public void deleteByIdRegiaoTest() throws Exception {
+		mockMvc.perform(delete(URL+"/delete/{id}","1004").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
 	}
+
 
 	public static String asJasonString(final Object obj) {
 		try {

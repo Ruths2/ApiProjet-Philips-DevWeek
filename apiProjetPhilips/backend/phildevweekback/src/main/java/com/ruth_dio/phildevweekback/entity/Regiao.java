@@ -11,8 +11,7 @@ public class Regiao {
     private String Regiao;
     private Integer Total_exames;
 
-    public Regiao(Long id, String regiao, Integer total_exames) {
-    this.id = id;
+    public Regiao(String regiao, Integer total_exames) {
 		Regiao = regiao;
 		Total_exames = total_exames;
     }
