@@ -5,13 +5,14 @@ import javax.persistence.*;
 
 @Entity
 public class Regiao {
-	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(nullable = false)
+  @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(nullable = false, updatable = false)
     private Long id;
     private String Regiao;
     private Integer Total_exames;
 
-    public Regiao(String regiao, Integer total_exames) {
+    public Regiao(Long id, String regiao, Integer total_exames) {
+    this.id = id;
 		Regiao = regiao;
 		Total_exames = total_exames;
     }

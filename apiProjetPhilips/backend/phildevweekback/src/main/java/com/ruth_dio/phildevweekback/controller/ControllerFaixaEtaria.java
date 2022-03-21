@@ -45,12 +45,12 @@ public class ControllerFaixaEtaria {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping("/faixaetaria/novo")
+    @PostMapping("/faixaetaria/add")
     public FaixaEtaria newFaixaEtaria(@RequestBody FaixaEtaria newFaixa){
         return fRepository.save(newFaixa);
     }
 
-    @DeleteMapping("/faixaetaria/remover/{id}")
+    @DeleteMapping("/faixaetaria/delete/{id}")
     public void deleteFaixaEtaria(@PathVariable long id){
         fRepository.deleteById(id);
     }

@@ -9,10 +9,13 @@ import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
@@ -48,5 +51,15 @@ public class ControllerRegiao {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-    
+    @PostMapping("/regioes/add")
+    public Regiao newRegiao(@RequestBody Regiao newRegiao) {
+        return repository.save(newRegiao); 
+     }
+
+    @DeleteMapping("/regioes/delete/{id}")
+    public void deleteRegiao(@PathVariable long id){
+        repository.deleteById(id);
+    }
+
+   
 }

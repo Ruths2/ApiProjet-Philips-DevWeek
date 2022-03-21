@@ -36,5 +36,14 @@ public class ControllerOcorrencias {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+    @PostMapping("/ocorrencia/add")
+    public IncidenciaExame newIncidenciaExame(@RequestBody IncidenciaExame newIncidenciaExame) {
+        return ocRepository.save(newIncidenciaExame); 
+    }
+
+    @DeleteMapping("/ocorrencia/delete/{id}")
+    public void deleteIncidenciaExame(@PathVariable long id){
+        ocRepository.deleteById(id);
+    }
 
 }
