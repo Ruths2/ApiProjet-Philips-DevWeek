@@ -1,7 +1,11 @@
 <div align="center">
 
 # ApiProjet-Philips-DevWeek 🚀
-## Projeto API SpringBoot integrado com Banco de Dados e AngularCLI.
+## API de consulta de exames do câncer de mama entre o período de junho e julho de 2015 . 
+
+### Tecnologias utilizadas:
+
+
 
 <a href="https://ibb.co/wcz9Fwt">
   <img height= "100" src="https://i.ibb.co/qJrt3W6/8b4237c520a344547b886b8cbdcbfa931ad0ba8b849f9d45b471f12542c1924c-0.png" alt="8b4237c520a344547b886b8cbdcbfa931ad0ba8b849f9d45b471f12542c1924c-0" border="0"></a>
