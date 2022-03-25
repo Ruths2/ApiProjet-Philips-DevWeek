@@ -48,16 +48,18 @@ class PhildevweekbackApplicationTests{
 		mockMvc.perform(get(URLR+"/1")).andExpect(status().isOk());
 	}
 
-	@Test // Testa se o metodo adicona uma nova Regiao ao banco de dados.
-	public void addNewRegiaoTest() throws Exception {
-		Regiao newRegiao = new Regiao("Teste-Regiao",7);
-		mockMvc.perform(post(URLR+"/add").contentType(MediaType.APPLICATION_JSON).content(asJasonString(newRegiao))).andExpect(status().isOk());
-	}
-
-	@Test //Testa se o metodo deleta uma região no banco de dados pelo id.
-	public void deleteByIdRegiaoTest() throws Exception {
-		mockMvc.perform(delete(URLR+"/delete/{id}","3003").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
-	}
+/*
+ *   @Test // Testa se o metodo adicona uma nova Regiao ao banco de dados.
+ *   public void addNewRegiaoTest() throws Exception {
+ *     Regiao newRegiao = new Regiao("Teste-Regiao",7);
+ *     mockMvc.perform(post(URLR+"/add").contentType(MediaType.APPLICATION_JSON).content(asJasonString(newRegiao))).andExpect(status().isOk());
+ *   }
+ * 
+ *   @Test //Testa se o metodo deleta uma região no banco de dados pelo id.
+ *   public void deleteByIdRegiaoTest() throws Exception {
+ *     mockMvc.perform(delete(URLR+"/delete/{id}","3006").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+ *   }
+ */
 
 // ****** Testes com o controller faixaetaria ******
 //
@@ -71,17 +73,19 @@ class PhildevweekbackApplicationTests{
 		mockMvc.perform(get(URLF+"/1")).andExpect(status().isOk());
 	}
 
-	@Test // Testa se o metodo adicona uma nova faixetaria no banco de dados.
-	public void addNewFaixaEtariaTest() throws Exception {
-		FaixaEtaria newFaixaEtaria = new FaixaEtaria(151, 160, "Acima de 150");
-		mockMvc.perform(post(URLF+"/add").contentType(MediaType.APPLICATION_JSON).content(asJasonString(newFaixaEtaria))).andExpect(status().isOk());
-	}
+/*
+ *   @Test // Testa se o metodo adicona uma nova faixetaria no banco de dados.
+ *   public void addNewFaixaEtariaTest() throws Exception {
+ *     FaixaEtaria newFaixaEtaria = new FaixaEtaria(151, 160, "Acima de 150");
+ *     mockMvc.perform(post(URLF+"/add").contentType(MediaType.APPLICATION_JSON).content(asJasonString(newFaixaEtaria))).andExpect(status().isOk());
+ *   }
+ * 
+ *   @Test //Testa se o metodo deleta uma faixa etaria no banco de dados pelo id.
+ *   public void deleteByIdFaixaEtariaTest() throws Exception {
+ *     mockMvc.perform(delete(URLF+"/delete/{id}","3007").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+ *   }
+ */
 
-	@Test //Testa se o metodo deleta uma faixa etaria no banco de dados pelo id.
-	public void deleteByIdFaixaEtariaTest() throws Exception {
-		mockMvc.perform(delete(URLF+"/delete/{id}","3004").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
-
-	}
 // ****** Testes com o controller ocorrencias ******
 //
 		@Test // Testa se a URL /api/ocorrencias esta funcionando corretamente.
@@ -94,17 +98,19 @@ class PhildevweekbackApplicationTests{
 		mockMvc.perform(get(URLO+"/2")).andExpect(status().isOk());
 	}
 
-	@Test // Testa se o metodo adicona uma nova ocorrencia no banco de dados.
-	public void addNewOcorrenciasTest() throws Exception {
-		IncidenciaExame newIncidenciaExame = new IncidenciaExame(2, 3, 6L, 20);
-		mockMvc.perform(post(URLO+"/add").contentType(MediaType.APPLICATION_JSON).content(asJasonString(newIncidenciaExame))).andExpect(status().isOk());
-	}
+/*
+ *   @Test // Testa se o metodo adicona uma nova ocorrencia no banco de dados.
+ *   public void addNewOcorrenciasTest() throws Exception {
+ *     IncidenciaExame newIncidenciaExame = new IncidenciaExame(2, 3, 6L, 20);
+ *     mockMvc.perform(post(URLO+"/add").contentType(MediaType.APPLICATION_JSON).content(asJasonString(newIncidenciaExame))).andExpect(status().isOk());
+ *   }
+ * 
+ *   @Test //Testa se o metodo deleta uma ocorrencia no banco de dados pelo id.
+ *   public void deleteByIdOcorrenciasTest() throws Exception {
+ *     mockMvc.perform(delete(URLO+"/delete/{id}","3008").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+ *   }
+ */
 
-	@Test //Testa se o metodo deleta uma ocorrencia no banco de dados pelo id.
-	public void deleteByIdOcorrenciasTest() throws Exception {
-		mockMvc.perform(delete(URLO+"/delete/{id}","3005").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
-
-	}
 	public static String asJasonString(final Object obj) {
 		try {
 			return new ObjectMapper().writeValueAsString(obj);
