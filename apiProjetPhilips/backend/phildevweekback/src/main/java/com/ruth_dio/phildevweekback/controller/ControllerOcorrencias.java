@@ -27,8 +27,8 @@ public class ControllerOcorrencias {
         return new ResponseEntity<>(listaOcorrencia, HttpStatus.OK);
     }
 
-    @GetMapping("/ocorrencia/{id}")
-    public ResponseEntity<IncidenciaExame> findOcorrenciasById(@PathVariable Long id){
+    @GetMapping("/ocorrencias/{id}")
+    public ResponseEntity<IncidenciaExame> findByIdOcorrencias(@PathVariable Long id){
         Optional<IncidenciaExame> ocorrenciaOptional = ocRepository.findById(id);
         if (ocorrenciaOptional.isPresent()){
             IncidenciaExame ocorrenciaUnid = ocorrenciaOptional.get();
@@ -36,12 +36,13 @@ public class ControllerOcorrencias {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-    @PostMapping("/ocorrencia/add")
+
+    @PostMapping("/ocorrencias/add")
     public IncidenciaExame newIncidenciaExame(@RequestBody IncidenciaExame newIncidenciaExame) {
         return ocRepository.save(newIncidenciaExame); 
     }
 
-    @DeleteMapping("/ocorrencia/delete/{id}")
+    @DeleteMapping("/ocorrencias/delete/{id}")
     public void deleteIncidenciaExame(@PathVariable long id){
         ocRepository.deleteById(id);
     }
